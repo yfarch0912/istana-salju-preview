@@ -192,6 +192,88 @@ footer p{background:rgba(7,20,40,.8);display:inline-block;padding:8px 14px;borde
   html{scroll-behavior:auto}
   .rv{opacity:1;transform:none}
 }
+
+/* ===== BESPOKE #25 ISTANA SALJU — ISTANA ES DI BAWAH AURORA ===== */
+@keyframes spinSlow{to{transform:rotate(360deg)}}
+@keyframes twinkle{0%,100%{opacity:.25;transform:scale(.7)}50%{opacity:1;transform:scale(1.25)}}
+@keyframes breath{from{transform:scale(1)}to{transform:scale(1.05)}}
+@keyframes sheenIce{0%{transform:translateX(-130%) skewX(-18deg)}55%,100%{transform:translateX(240%) skewX(-18deg)}}
+@keyframes ringSpin{to{transform:rotate(360deg)}}
+@keyframes globeShake{0%{transform:rotate(0)}18%{transform:rotate(-3.4deg)}36%{transform:rotate(3deg)}54%{transform:rotate(-1.8deg)}72%{transform:rotate(1deg)}100%{transform:rotate(0)}}
+@keyframes globeSnow{0%{transform:translate(0,-46px) rotate(0);opacity:0}12%{opacity:1}55%{transform:translate(9px,26px) rotate(160deg)}100%{transform:translate(-4px,86px) rotate(300deg);opacity:.85}}
+@keyframes winFlicker{0%,100%{opacity:.82}42%{opacity:1}58%{opacity:.9}74%{opacity:1}}
+@keyframes mirrorShine{from{opacity:.12}to{opacity:.5}}
+@keyframes glowPulse{from{opacity:.55}to{opacity:.95}}
+/* kepala section = MEDALI KEPING SALJU heksagonal di belakang pelat biru-es gelap */
+.sec-head{position:relative;padding:26px 10px 20px}
+.sec-head::before{content:"";position:absolute;left:50%;top:44%;width:215px;height:215px;margin:-108px 0 0 -108px;z-index:0;opacity:.5;animation:spinSlow 70s linear infinite;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg stroke='%23BFE3FF' stroke-width='2.6' stroke-linecap='round' fill='none'%3E%3Cpath d='M50 4v92M10 27l80 46M90 27L10 73'/%3E%3Cpath d='M50 4l-9 11M50 4l9 11M50 96l-9-11M50 96l9-11M10 27l14 1M10 27l1 14M90 73l-14-1M90 73l-1-14M90 27l-14 1M90 27l-1 14M10 73l14-1M10 73l1-14'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat}
+.sec-head>*{position:relative;z-index:1}
+.sec-head h2.script{background:rgba(6,17,36,.88);border:1px solid var(--line);border-radius:18px;padding:10px 18px 14px;display:inline-block;box-shadow:0 12px 30px rgba(0,0,0,.5)}
+/* pembagi = ICICLES menggantung dari balok es */
+.icicle-div{position:relative;z-index:2;height:86px;pointer-events:none;margin-bottom:-8px}
+.icicle-div .beam{position:absolute;top:0;left:0;right:0;height:15px;background:linear-gradient(180deg,#DFF2FF,#8FC7F2);box-shadow:0 4px 14px rgba(120,190,255,.35)}
+.icicle-div img{width:100%;height:78px;object-fit:fill;transform-origin:50% 0;animation:swayGantung 6.8s ease-in-out infinite alternate}
+/* sampul: bintang, bulan, gerbang es */
+.star{position:absolute;border-radius:50%;background:#fff;box-shadow:0 0 8px 2px rgba(200,230,255,.8);animation:twinkle 3.4s ease-in-out infinite;z-index:1}
+.moon{position:absolute;top:64px;right:26px;width:52px;height:52px;border-radius:50%;background:radial-gradient(circle at 38% 34%,#FFFBEF,#F3E3B0 55%,#D9BC72);box-shadow:0 0 34px 10px rgba(255,235,180,.35);z-index:1;animation:glowPulse 5s ease-in-out infinite alternate}
+.gate{position:absolute;top:0;bottom:0;width:51%;z-index:2;transition:transform 1.05s cubic-bezier(.7,0,.3,1);background:linear-gradient(115deg,rgba(190,228,255,.30),rgba(110,170,230,.16) 40%,rgba(225,246,255,.34) 62%,rgba(90,150,215,.20));border:1px solid rgba(220,245,255,.45);backdrop-filter:blur(1.5px)}
+.gate::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 26px,rgba(255,255,255,.14) 27px 29px,transparent 30px 58px)}
+.gate.L{left:0;border-radius:0 46% 8px 0/0 30% 8px 0}.gate.R{right:0;border-radius:46% 0 0 8px/30% 0 0 8px}
+#cover.opening .gate.L{transform:translateX(-104%)}#cover.opening .gate.R{transform:translateX(104%)}
+.gate-glow{position:absolute;left:50%;top:46%;width:340px;height:340px;margin:-170px 0 0 -170px;border-radius:50%;background:radial-gradient(circle,rgba(255,205,110,.85),rgba(255,170,70,.35) 45%,transparent 70%);opacity:0;transition:opacity 1s ease .25s;z-index:1;pointer-events:none}
+#cover.opening .gate-glow{opacity:1}
+body:not(.opened) .worldveil .aurora{animation-play-state:paused;opacity:.25}
+/* COUNTDOWN = BOLA SALJU */
+.globe-wrap{text-align:center}
+.globe{position:relative;width:262px;height:262px;margin:6px auto 0;border-radius:50%;background:radial-gradient(circle at 34% 26%,rgba(255,255,255,.34),rgba(160,210,250,.12) 46%,rgba(60,110,180,.20) 82%);border:2px solid rgba(220,245,255,.65);box-shadow:inset 0 -26px 44px rgba(140,200,255,.28),inset 0 14px 30px rgba(255,255,255,.22),0 18px 40px rgba(0,0,0,.5);overflow:hidden}
+.globe.shake{animation:globeShake 1.1s ease-in-out}
+.globe .palace{position:absolute;left:50%;bottom:34px;width:172px;transform:translateX(-50%)}
+.globe .snowbase{position:absolute;left:0;right:0;bottom:0;height:44px;background:radial-gradient(120% 130% at 50% 0,#fff,#CFE8FC 70%);border-radius:50% 50% 0 0/100% 100% 0 0}
+.globe i{position:absolute;top:38%;border-radius:50%;background:#fff;opacity:0}
+.globe.shake i{animation:globeSnow 3.6s ease-in forwards}
+.globe .cd{position:absolute;left:10px;right:10px;top:16px;z-index:3}
+.globe-base{position:relative;width:230px;margin:-14px auto 0;background:linear-gradient(180deg,#7A4E26,#5A3818 60%,#422708);border-radius:12px 12px 20px 20px;padding:15px 10px 11px;box-shadow:0 14px 28px rgba(0,0,0,.55);border:1px solid rgba(255,215,150,.4)}
+.globe-base::before{content:"";position:absolute;inset:5px;border:1px solid rgba(255,215,150,.45);border-radius:8px 8px 15px 15px;pointer-events:none}
+.ice-ring{width:64px;height:64px;margin:0 auto;border-radius:50%;border:3px dashed rgba(191,227,255,.85);animation:ringSpin 26s linear infinite;position:relative}
+.ice-ring::after{content:"✦";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--gold2);font-size:20px}
+/* GALERI: kristal ganjil + cermin danau beku genap */
+.rail figure:nth-child(even) .frame-plain img{-webkit-box-reflect:below 8px linear-gradient(transparent 58%,rgba(170,210,245,.38))}
+.rail figure:nth-child(even) .frame-plain{position:relative}
+.rail figure:nth-child(even) .frame-plain::after{content:"";position:absolute;left:6%;right:6%;bottom:-16px;height:12px;border-radius:50%;background:radial-gradient(50% 100% at 50% 0,rgba(190,225,255,.55),transparent 75%);animation:mirrorShine 3.8s ease-in-out infinite alternate;pointer-events:none}
+.rail figure:nth-child(odd) .frame-crystal::before{content:"";position:absolute;top:0;bottom:0;width:44%;z-index:2;background:linear-gradient(100deg,transparent,rgba(255,255,255,.34),transparent);animation:sheenIce 5.5s ease-in-out infinite;pointer-events:none}
+.gal-chip2{display:inline-block;margin-left:6px;background:linear-gradient(90deg,#12365E,#1E4A7A);border:1px solid var(--gold);color:#FFD98A;font-size:.68rem;font-weight:700;letter-spacing:.08em;padding:3px 9px;border-radius:999px;vertical-align:2px}
+/* MEMPELAI: jendela lengkung istana */
+.person .frame-crystal,.person .frame-plain{border-radius:126px 126px 16px 16px}
+.person .frame-crystal img,.person .frame-plain img{border-radius:118px 118px 12px 12px}
+.person .frame-crystal{box-shadow:0 0 34px rgba(255,190,90,.35),0 12px 30px rgba(0,0,0,.5);animation:winFlicker 3.4s ease-in-out infinite}
+.duo-arch{text-align:center;margin-bottom:16px}
+.duo-arch img{width:150px;margin:0 auto;filter:drop-shadow(0 8px 18px rgba(120,190,255,.4))}
+/* ACARA: kartu menu jamuan */
+.menu-lines{margin:12px auto 2px;width:78%;height:26px;background:repeating-linear-gradient(180deg,transparent 0 7px,rgba(233,201,121,.4) 7px 8px);position:relative}
+.menu-lines::before,.menu-lines::after{content:"❧";position:absolute;top:-4px;color:var(--gold);font-size:15px}
+.menu-lines::before{left:-24px}.menu-lines::after{right:-24px;transform:scaleX(-1)}
+.candle{animation:flick 1.9s ease-in-out infinite alternate;transform-origin:50% 90%}
+/* LOVE STORY: jejak kaki + jendela makin terang */
+.story{position:relative}
+.story::before{content:"";position:absolute;left:26px;top:8px;bottom:8px;width:34px;background:url('assets/undangya/istana-salju/is-footprints.webp') center top/34px auto repeat-y;opacity:.55;pointer-events:none}
+.story article{position:relative;padding-left:56px}
+.story .cem{position:absolute;right:10px;top:8px;width:44px}
+.winrow{display:flex;gap:6px;margin-top:10px}
+.winrow i{width:15px;height:22px;border-radius:8px 8px 2px 2px;background:#FFCE6E;box-shadow:0 0 12px 3px rgba(255,190,90,.55);animation:winFlicker 3s ease-in-out infinite}
+/* RSVP: buku frost + pena bulu */
+#rsvp .glass{background:linear-gradient(160deg,rgba(16,42,78,.92),rgba(7,20,40,.88) 55%,rgba(22,54,98,.92));box-shadow:inset 0 0 44px rgba(191,227,255,.14),0 14px 34px rgba(0,0,0,.45)}
+.quill{position:absolute;top:12px;right:14px;width:46px;transform-origin:80% 90%;animation:swayTegak 6s ease-in-out infinite alternate;opacity:.95}
+/* reveal baru: kristal mekar + gerbang */
+.rv-bloom{transform:scale(.8) rotate(-5deg)}
+.rv-gateL{clip-path:inset(0 52% 0 0);transform:translateX(-16px)}
+.rv-gateR{clip-path:inset(0 0 0 52%);transform:translateX(16px)}
+.rv.in.rv-bloom,.rv.in.rv-gateL,.rv.in.rv-gateR{clip-path:inset(0 0 0 0);transform:none}
+.hero-breath img{animation:breath 12s ease-in-out infinite alternate}
+
+/* fix bespoke: jejak kaki tampak di selasar kiri kartu kisah + caption galeri rapi */
+.story article{margin-left:46px}
+.story::before{left:0;z-index:1}
+.rail figcaption{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;align-items:center}
 </style>
 </head>
 <body class="locked">
@@ -222,20 +304,30 @@ footer p{background:rgba(7,20,40,.8);display:inline-block;padding:8px 14px;borde
 
 <!-- ================= COVER ================= -->
 <div id="cover" role="dialog" aria-label="Sampul undangan">
-  <div class="cover-inner">
-    <div class="aurora" style="top:9%"></div><div class="aurora a2" style="top:16%"></div>
-    <div class="snowfield" data-snow="22"></div>
-    <img class="flakeFloat" src="assets/undangya/istana-salju/keping-salju.webp" alt="" width="54" style="top:15%;left:7%">
-    <img class="flakeFloat" src="assets/undangya/istana-salju/keping-salju.webp" alt="" width="34" style="top:23%;right:9%;animation-delay:-3s">
+  <div class="cover-inner" data-deco>
+    <div class="aurora" data-deco style="top:9%"></div><div class="aurora a2" data-deco style="top:16%"></div>
+    <div class="gate-glow" data-deco aria-hidden="true"></div><div class="gate L" data-deco aria-hidden="true"></div><div class="gate R" data-deco aria-hidden="true"></div>
+    <div class="moon" data-deco aria-hidden="true"></div>
+    <img data-deco src="assets/undangya/istana-salju/is-icicles.webp" alt="" style="position:absolute;top:0;left:0;width:100%;height:64px;object-fit:fill;z-index:2" aria-hidden="true">
+    <span class="star" data-deco style="left:6%;top:8%;width:3px;height:3px;animation-delay:-0.0s" aria-hidden="true"></span><span class="star" data-deco style="left:17%;top:15%;width:4px;height:4px;animation-delay:-0.7s" aria-hidden="true"></span><span class="star" data-deco style="left:28%;top:22%;width:5px;height:5px;animation-delay:-1.4s" aria-hidden="true"></span><span class="star" data-deco style="left:39%;top:29%;width:3px;height:3px;animation-delay:-2.0999999999999996s" aria-hidden="true"></span><span class="star" data-deco style="left:50%;top:8%;width:4px;height:4px;animation-delay:-2.8s" aria-hidden="true"></span><span class="star" data-deco style="left:61%;top:15%;width:5px;height:5px;animation-delay:-3.5s" aria-hidden="true"></span><span class="star" data-deco style="left:72%;top:22%;width:3px;height:3px;animation-delay:-4.199999999999999s" aria-hidden="true"></span><span class="star" data-deco style="left:83%;top:29%;width:4px;height:4px;animation-delay:-4.8999999999999995s" aria-hidden="true"></span>
+    <div class="snowfield" data-deco data-snow="22"></div>
+    <img data-deco class="flakeFloat" src="assets/undangya/istana-salju/keping-salju.webp" alt="" width="54" style="top:15%;left:7%">
+    <img data-deco class="flakeFloat" src="assets/undangya/istana-salju/keping-salju.webp" alt="" width="34" style="top:23%;right:9%;animation-delay:-3s">
+    <img data-deco class="flakeFloat" src="assets/undangya/istana-salju/keping-salju.webp" alt="" width="26" style="top:34%;left:16%;animation-delay:-1.6s">
+    <img data-deco class="flakeFloat" src="assets/undangya/istana-salju/keping-salju.webp" alt="" width="42" style="top:40%;right:15%;animation-delay:-5s">
+    <img data-deco class="gantung" src="assets/undangya/istana-salju/fg-lentera.webp" alt="" width="44" style="position:absolute;top:118px;left:12px;z-index:2">
+    <img data-deco class="gantung" src="assets/undangya/istana-salju/fg-lentera.webp" alt="" width="38" style="position:absolute;top:150px;right:12px;z-index:2;animation-delay:-2.8s">
     <div class="cover-top">
       <span class="kick rv rv-down in">Undangan Pernikahan</span>
       <p class="rv rv-down in d1" style="margin-top:12px;color:#fff;text-shadow:0 2px 10px rgba(3,10,24,.95);font-size:.9rem;letter-spacing:.14em">ISTANA ES &amp; AURORA · SABTU, 12 JUNI 2027</p>
     </div>
     <div class="fg-row">
-      <img class="tegak" src="assets/undangya/istana-salju/cemara-salju.webp" alt="" width="92" style="left:-8px">
-      <img class="tegak" src="assets/undangya/istana-salju/fg-pinus.webp" alt="" width="76" style="right:-6px;animation-delay:-2.5s">
-      <img class="tegak" src="assets/undangya/istana-salju/bunga-es.webp" alt="" width="62" style="left:64px;animation-delay:-4s">
-      <img class="tegak" src="assets/undangya/istana-salju/fg-hydrangea.webp" alt="" width="58" style="right:60px;animation-delay:-1.4s">
+      <img data-deco class="tegak" src="assets/undangya/istana-salju/cemara-salju.webp" alt="" width="92" style="left:-8px">
+      <img data-deco class="tegak" src="assets/undangya/istana-salju/fg-pinus.webp" alt="" width="76" style="right:-6px;animation-delay:-2.5s">
+      <img data-deco class="tegak" src="assets/undangya/istana-salju/bunga-es.webp" alt="" width="62" style="left:64px;animation-delay:-4s">
+      <img data-deco class="tegak" src="assets/undangya/istana-salju/fg-hydrangea.webp" alt="" width="58" style="right:60px;animation-delay:-1.4s">
+      <img data-deco src="assets/undangya/istana-salju/is-crystal.webp" alt="" width="86" style="left:38%">
+      <img data-deco class="tegak" src="assets/undangya/istana-salju/cemara-salju.webp" alt="" width="64" style="right:118px;animation-delay:-5.2s">
     </div>
     <div class="cover-bottom">
       <div class="panel">
@@ -264,7 +356,7 @@ footer p{background:rgba(7,20,40,.8);display:inline-block;padding:8px 14px;borde
     <p class="rv rv-up d4" style="margin-top:12px">Merupakan kehormatan dan kebahagiaan bagi kami beserta keluarga apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
   </div>
 </section>
-<div class="strip" aria-hidden="true"></div>
+<div class="icicle-div" aria-hidden="true"><span class="beam"></span><img class="gantung" src="assets/undangya/istana-salju/is-icicles.webp" alt="" loading="lazy"></div>
 <!-- ================= MEMPELAI ================= -->
 <section id="mempelai">
   <div class="snowfield" data-snow="8"></div>
@@ -273,6 +365,7 @@ footer p{background:rgba(7,20,40,.8);display:inline-block;padding:8px 14px;borde
     <h2 class="script rv rv-zoom d1" style="margin-top:12px">Mempelai</h2>
     <p class="rv rv-up d2">Busana musim dingin yang sama di setiap foto: gaun putih-perak &amp; mantel bulu krem, jas biru tua &amp; syal krem.</p>
   </div>
+  <div class="duo-arch rv rv-bloom"><img src="assets/undangya/istana-salju/is-crystal.webp" alt="Kristal es menyatukan dua jendela istana mempelai"></div>
   <div class="glass person">
     <div class="frame-crystal rv rv-left"><img src="assets/undangya/istana-salju/bride.webp" alt="Mempelai wanita dalam gaun putih-perak, hijab putih, dan mantel bulu krem di taman cemara bersalju" loading="lazy"></div>
     <h3 class="rv rv-up d1">Meyzsa Putri Ananda, S.Pd.</h3>
@@ -286,10 +379,10 @@ footer p{background:rgba(7,20,40,.8);display:inline-block;padding:8px 14px;borde
     <p class="rv rv-up d2 small">Putra dari Bapak H. Bambang Sutrisno<br>&amp; Ibu Hj. Ratna Dewi</p>
     <a class="btn ghost sm rv rv-zoom d3" href="https://instagram.com/fahrezzi.contoh" target="_blank" rel="noopener" style="margin-top:10px">@fahrezzi.contoh</a>
   </div>
-  <div class="frame-crystal rv rv-flip" style="margin-top:20px;aspect-ratio:1/1"><img src="assets/undangya/istana-salju/hero.webp" alt="Meyzsa dan Fahrezzi bergandengan tangan di depan istana kristal es yang bercahaya" loading="lazy"></div>
+  <div class="frame-crystal hero-breath rv rv-flip" style="margin-top:20px;aspect-ratio:1/1"><img src="assets/undangya/istana-salju/hero.webp" alt="Meyzsa dan Fahrezzi bergandengan tangan di depan istana kristal es yang bercahaya" loading="lazy"></div>
   <p class="center rv rv-up d1" style="margin-top:10px"><span style="background:rgba(7,20,40,.85);padding:6px 14px;border-radius:999px;display:inline-block;font-size:.85rem">Di depan istana kristal es — awal musim kami.</span></p>
 </section>
-<div class="strip s2" aria-hidden="true"></div>
+<div class="icicle-div" aria-hidden="true"><span class="beam"></span><img class="gantung" src="assets/undangya/istana-salju/is-icicles.webp" alt="" loading="lazy" style="animation-delay:-3.2s"></div>
 <!-- ================= COUNTDOWN + ACARA ================= -->
 <section id="acara">
   <div class="aurora a2" style="top:0"></div><div class="snowfield" data-snow="8"></div>
@@ -297,20 +390,22 @@ footer p{background:rgba(7,20,40,.8);display:inline-block;padding:8px 14px;borde
     <span class="kick rv rv-down">Hitung Mundur</span>
     <h2 class="script rv rv-zoom d1" style="margin-top:12px">Menuju Hari Bahagia</h2>
   </div>
-  <div class="glass">
-    <div class="cd" role="timer" aria-label="Hitung mundur menuju 12 Juni 2027 pukul 08.00 WIB">
-      <div class="rv rv-up"><b id="cdD">0</b><span>Hari</span></div>
-      <div class="rv rv-up d1"><b id="cdH">0</b><span>Jam</span></div>
-      <div class="rv rv-up d2"><b id="cdM">0</b><span>Menit</span></div>
-      <div class="rv rv-up d3"><b id="cdS">0</b><span>Detik</span></div>
+  <div class="glass globe-wrap">
+    <div class="globe rv rv-bloom" id="snowGlobe">
+      <img class="palace" src="assets/undangya/istana-salju/is-globe-palace.webp" alt="Miniatur istana es di dalam bola salju">
+      <div class="snowbase"></div><i style="left:8%;width:3.0px;height:3.0px;animation-delay:0.00s"></i><i style="left:37%;width:4.5px;height:4.5px;animation-delay:0.16s"></i><i style="left:66%;width:6.0px;height:6.0px;animation-delay:0.32s"></i><i style="left:11%;width:3.0px;height:3.0px;animation-delay:0.48s"></i><i style="left:40%;width:4.5px;height:4.5px;animation-delay:0.64s"></i><i style="left:69%;width:6.0px;height:6.0px;animation-delay:0.80s"></i><i style="left:14%;width:3.0px;height:3.0px;animation-delay:0.96s"></i><i style="left:43%;width:4.5px;height:4.5px;animation-delay:1.12s"></i><i style="left:72%;width:6.0px;height:6.0px;animation-delay:1.28s"></i><i style="left:17%;width:3.0px;height:3.0px;animation-delay:1.44s"></i><i style="left:46%;width:4.5px;height:4.5px;animation-delay:1.60s"></i><i style="left:75%;width:6.0px;height:6.0px;animation-delay:1.76s"></i><i style="left:20%;width:3.0px;height:3.0px;animation-delay:1.92s"></i><i style="left:49%;width:4.5px;height:4.5px;animation-delay:2.08s"></i>
+      <div class="cd" role="timer" aria-label="Hitung mundur menuju 12 Juni 2027 pukul 08.00 WIB">
+        <div><b id="cdD">0</b><span>Hari</span></div><div><b id="cdH">0</b><span>Jam</span></div><div><b id="cdM">0</b><span>Menit</span></div><div><b id="cdS">0</b><span>Detik</span></div>
+      </div>
     </div>
+    <div class="globe-base"><div class="ice-ring" aria-hidden="true"></div><p class="center small" style="margin-top:8px;color:#FFE9A8">Alas kayu ukir · cincin es berputar — bola terguncang tiap kali Anda tiba di sini.</p></div>
     <p class="center small rv rv-up d4" style="margin-top:12px">Sabtu, 12 Juni 2027 · pukul 08.00 WIB</p>
   </div>
   <div class="glass event" style="margin-top:18px">
     <svg class="rv rv-spin" width="46" height="46" style="margin:0 auto 6px"><use href="#i-cincin"/></svg>
     <h3 class="rv rv-up">Akad Nikah</h3>
     <p class="when rv rv-up d1">Sabtu, 12 Juni 2027 · 08.00 – 10.00 WIB</p>
-    <p class="where rv rv-up d2">Masjid Agung Al-Azhar<br>Jakarta Selatan</p>
+    <p class="where rv rv-up d2">Masjid Agung Al-Azhar<br>Jakarta Selatan</p><div class="menu-lines" aria-hidden="true"></div><svg class="candle" width="30" height="44" viewBox="0 0 30 44" style="margin:4px auto 0" aria-hidden="true"><path d="M15 2c3 5 4 7 0 11-4-4-3-6 0-11z" fill="#FFCE6E"/><rect x="9" y="16" width="12" height="24" rx="3" fill="#EAF4FF"/><rect x="9" y="16" width="12" height="5" rx="2" fill="#BFE3FF"/></svg>
     <div class="row">
       <a class="btn sm rv rv-left d2" href="https://www.google.com/maps/search/?api=1&amp;query=Masjid+Agung+Al-Azhar+Jakarta+Selatan" target="_blank" rel="noopener"><svg width="16" height="16"><use href="#i-peta"/></svg> Google Maps</a>
       <a class="btn ghost sm rv rv-up d3" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Akad+Nikah+Meyzsa+%26+Fahrezzi&amp;dates=20270612T010000Z/20270612T030000Z&amp;details=Akad+Nikah+Meyzsa+Putri+Ananda+%26+Ahmad+Fahrezzi+Pratama&amp;location=Masjid+Agung+Al-Azhar%2C+Jakarta+Selatan" target="_blank" rel="noopener"><svg width="16" height="16"><use href="#i-kalender"/></svg> Simpan Kalender</a>
@@ -321,7 +416,7 @@ footer p{background:rgba(7,20,40,.8);display:inline-block;padding:8px 14px;borde
     <svg class="rv rv-spin" width="46" height="46" style="margin:0 auto 6px"><use href="#i-lentera"/></svg>
     <h3 class="rv rv-up">Resepsi</h3>
     <p class="when rv rv-up d1">Sabtu, 12 Juni 2027 · 11.00 – 13.00 WIB</p>
-    <p class="where rv rv-up d2">The Ritz-Carlton Jakarta, Pacific Place<br>Jakarta Selatan</p>
+    <p class="where rv rv-up d2">The Ritz-Carlton Jakarta, Pacific Place<br>Jakarta Selatan</p><div class="menu-lines" aria-hidden="true"></div><svg class="candle" width="30" height="44" viewBox="0 0 30 44" style="margin:4px auto 0" aria-hidden="true"><path d="M15 2c3 5 4 7 0 11-4-4-3-6 0-11z" fill="#FFCE6E"/><rect x="9" y="16" width="12" height="24" rx="3" fill="#EAF4FF"/><rect x="9" y="16" width="12" height="5" rx="2" fill="#BFE3FF"/></svg>
     <div class="row">
       <a class="btn sm rv rv-left d2" href="https://www.google.com/maps/search/?api=1&amp;query=The+Ritz-Carlton+Jakarta+Pacific+Place" target="_blank" rel="noopener"><svg width="16" height="16"><use href="#i-peta"/></svg> Google Maps</a>
       <a class="btn ghost sm rv rv-up d3" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Resepsi+Meyzsa+%26+Fahrezzi&amp;dates=20270612T040000Z/20270612T060000Z&amp;details=Resepsi+Pernikahan+Meyzsa+Putri+Ananda+%26+Ahmad+Fahrezzi+Pratama&amp;location=The+Ritz-Carlton+Jakarta%2C+Pacific+Place" target="_blank" rel="noopener"><svg width="16" height="16"><use href="#i-kalender"/></svg> Simpan Kalender</a>
@@ -330,7 +425,7 @@ footer p{background:rgba(7,20,40,.8);display:inline-block;padding:8px 14px;borde
   </div>
   <img class="gantung" src="assets/undangya/istana-salju/fg-lentera.webp" alt="" width="52" style="position:absolute;top:8px;right:14px">
 </section>
-<div class="strip" aria-hidden="true"></div>
+<div class="icicle-div" aria-hidden="true"><span class="beam"></span><img class="gantung" src="assets/undangya/istana-salju/is-icicles.webp" alt="" loading="lazy"></div>
 <!-- ================= GALERI ================= -->
 <section id="galeri">
   <div class="snowfield" data-snow="8"></div>
@@ -340,14 +435,14 @@ footer p{background:rgba(7,20,40,.8);display:inline-block;padding:8px 14px;borde
     <p class="rv rv-up d2">Geser kanan–kiri · ketuk foto untuk memperbesar.</p>
   </div>
   <div class="rail" id="galRail" aria-label="Galeri foto pasangan, dapat digeser">
-    <figure class="rv rv-left"><div class="frame-crystal"><img src="assets/undangya/istana-salju/galeri-1.webp" alt="Pasangan di balkon istana kristal es" data-cap="Balkon Istana Es" loading="lazy"></div><figcaption><span>Balkon Istana Es</span></figcaption></figure>
-    <figure class="rv rv-up d1"><div class="frame-plain"><img src="assets/undangya/istana-salju/galeri-2.webp" alt="Pasangan di aula kristal es dengan lampu gantung" data-cap="Aula Kristal" loading="lazy"></div><figcaption><span>Aula Kristal</span></figcaption></figure>
-    <figure class="rv rv-right d2"><div class="frame-crystal"><img src="assets/undangya/istana-salju/galeri-3.webp" alt="Pasangan di taman cemara bersalju" data-cap="Taman Cemara Bersalju" loading="lazy"></div><figcaption><span>Taman Cemara Bersalju</span></figcaption></figure>
-    <figure class="tall rv rv-zoom d1"><div class="frame-plain"><img src="assets/undangya/istana-salju/galeri-4.webp" alt="Pasangan menaiki kereta luncur rusa saat senja" data-cap="Kereta Rusa Senja" loading="lazy"></div><figcaption><span>Kereta Rusa Senja</span></figcaption></figure>
-    <figure class="rv rv-left d2"><div class="frame-crystal"><img src="assets/undangya/istana-salju/galeri-5.webp" alt="Pasangan di jembatan es melengkung" data-cap="Jembatan Es" loading="lazy"></div><figcaption><span>Jembatan Es</span></figcaption></figure>
-    <figure class="rv rv-up d1"><div class="frame-plain"><img src="assets/undangya/istana-salju/galeri-6.webp" alt="Pasangan di depan perapian kabin kayu yang hangat" data-cap="Perapian Kabin Hangat" loading="lazy"></div><figcaption><span>Perapian Kabin Hangat</span></figcaption></figure>
-    <figure class="tall rv rv-right"><div class="frame-crystal"><img src="assets/undangya/istana-salju/galeri-7.webp" alt="Pasangan di danau beku di bawah aurora" data-cap="Danau Beku Aurora" loading="lazy"></div><figcaption><span>Danau Beku Aurora</span></figcaption></figure>
-    <figure class="rv rv-zoom d2"><div class="frame-plain"><img src="assets/undangya/istana-salju/galeri-8.webp" alt="Pasangan di antara lentera-lentera es yang menyala" data-cap="Malam Lentera Es" loading="lazy"></div><figcaption><span>Malam Lentera Es</span></figcaption></figure>
+    <figure class="rv rv-left"><div class="frame-crystal"><img src="assets/undangya/istana-salju/galeri-1.webp" alt="Pasangan di balkon istana kristal es" data-cap="Balkon Istana Es" loading="lazy"></div><span>Balkon Istana Es</span><span class="gal-chip2">Kristal 1 · Sayap Utara</span></figure>
+    <figure class="rv rv-up d1"><div class="frame-plain"><img src="assets/undangya/istana-salju/galeri-2.webp" alt="Pasangan di aula kristal es dengan lampu gantung" data-cap="Aula Kristal" loading="lazy"></div><span>Aula Kristal</span><span class="gal-chip2">Kristal 2 · Sayap Timur</span></figure>
+    <figure class="rv rv-right d2"><div class="frame-crystal"><img src="assets/undangya/istana-salju/galeri-3.webp" alt="Pasangan di taman cemara bersalju" data-cap="Taman Cemara Bersalju" loading="lazy"></div><span>Taman Cemara Bersalju</span><span class="gal-chip2">Kristal 3 · Sayap Selatan</span></figure>
+    <figure class="tall rv rv-zoom d1"><div class="frame-plain"><img src="assets/undangya/istana-salju/galeri-4.webp" alt="Pasangan menaiki kereta luncur rusa saat senja" data-cap="Kereta Rusa Senja" loading="lazy"></div><span>Kereta Rusa Senja</span><span class="gal-chip2">Kristal 4 · Sayap Barat</span></figure>
+    <figure class="rv rv-left d2"><div class="frame-crystal"><img src="assets/undangya/istana-salju/galeri-5.webp" alt="Pasangan di jembatan es melengkung" data-cap="Jembatan Es" loading="lazy"></div><span>Jembatan Es</span><span class="gal-chip2">Kristal 5 · Sayap Utara</span></figure>
+    <figure class="rv rv-up d1"><div class="frame-plain"><img src="assets/undangya/istana-salju/galeri-6.webp" alt="Pasangan di depan perapian kabin kayu yang hangat" data-cap="Perapian Kabin Hangat" loading="lazy"></div><span>Perapian Kabin Hangat</span><span class="gal-chip2">Kristal 6 · Sayap Timur</span></figure>
+    <figure class="tall rv rv-right"><div class="frame-crystal"><img src="assets/undangya/istana-salju/galeri-7.webp" alt="Pasangan di danau beku di bawah aurora" data-cap="Danau Beku Aurora" loading="lazy"></div><span>Danau Beku Aurora</span><span class="gal-chip2">Kristal 7 · Sayap Selatan</span></figure>
+    <figure class="rv rv-zoom d2"><div class="frame-plain"><img src="assets/undangya/istana-salju/galeri-8.webp" alt="Pasangan di antara lentera-lentera es yang menyala" data-cap="Malam Lentera Es" loading="lazy"></div><span>Malam Lentera Es</span><span class="gal-chip2">Kristal 8 · Sayap Barat</span></figure>
   </div>
   <div class="gal-meta rv rv-up">
     <div class="dots" id="galDots" aria-hidden="true"></div>
@@ -361,7 +456,7 @@ footer p{background:rgba(7,20,40,.8);display:inline-block;padding:8px 14px;borde
     <div class="iconbox rv rv-up d4"><svg><use href="#i-aurora"/></svg><span>Aurora</span></div>
   </div>
 </section>
-<div class="strip s2" aria-hidden="true"></div>
+<div class="icicle-div" aria-hidden="true"><span class="beam"></span><img class="gantung" src="assets/undangya/istana-salju/is-icicles.webp" alt="" loading="lazy" style="animation-delay:-3.2s"></div>
 <!-- ================= LOVE STORY ================= -->
 <section id="kisah">
   <div class="snowfield" data-snow="6"></div>
@@ -370,13 +465,13 @@ footer p{background:rgba(7,20,40,.8);display:inline-block;padding:8px 14px;borde
     <h2 class="script rv rv-zoom d1" style="margin-top:12px">Empat Babak Musim</h2>
   </div>
   <div class="story">
-    <article class="rv rv-left"><span class="yr">2019 · Bertemu</span><h3>Salju Pertama</h3><p>Dipertemukan dalam sebuah acara kampus di penghujung tahun, percakapan pertama kami sesederhana dua cangkir cokelat hangat — dan sejak itu, musim tak pernah terasa sedingin sebelumnya.</p></article>
-    <article class="rv rv-right"><span class="yr">2023 · Lamaran</span><h3>Di Bawah Aurora</h3><p>Empat tahun merawat jarak dan doa, Fahrezzi mengikat janji dalam acara lamaran keluarga yang hangat. Satu cincin, satu kata “bersedia”, dan dua keluarga yang mulai saling menyapa.</p></article>
-    <article class="rv rv-left"><span class="yr">2025 · Menyatukan Dua Keluarga</span><h3>Dua Rumah, Satu Meja</h3><p>Keluarga Ridwan dan keluarga Sutrisno bertemu dalam silaturahmi yang direncanakan bersama — menyepakati hari, tempat, dan satu hal terpenting: kebahagiaan kedua anak mereka.</p></article>
-    <article class="rv rv-right"><span class="yr">2027 · Hari Bahagia</span><h3>Istana Es Kami</h3><p>Sabtu, 12 Juni 2027 — babak yang kami tulis bersama Anda. Pintu istana terbuka; kami menunggu kehadiran dan doa restu Anda di Jakarta Selatan.</p></article>
+    <article class="rv rv-gateL"><span class="yr">2019 · Langkah Pertama</span><h3>Langkah Pertama di Salju</h3><img class="cem tegak" src="assets/undangya/istana-salju/cemara-salju.webp" alt="" loading="lazy"><div class="winrow" aria-hidden="true"><i style="opacity:0.35"></i><i style="opacity:0.35"></i><i style="opacity:0.35"></i></div><p>Dipertemukan dalam sebuah acara kampus di penghujung tahun, percakapan pertama kami sesederhana dua cangkir cokelat hangat — dan sejak itu, musim tak pernah terasa sedingin sebelumnya.</p></article>
+    <article class="rv rv-gateR"><span class="yr">2023 · Saling Menghangatkan</span><h3>Saling Menghangatkan</h3><img class="cem tegak" src="assets/undangya/istana-salju/cemara-salju.webp" alt="" loading="lazy"><div class="winrow" aria-hidden="true"><i style="opacity:0.57"></i><i style="opacity:0.57"></i><i style="opacity:0.57"></i></div><p>Empat tahun merawat jarak dan doa, Fahrezzi mengikat janji dalam acara lamaran keluarga yang hangat. Satu cincin, satu kata “bersedia”, dan dua keluarga yang mulai saling menyapa.</p></article>
+    <article class="rv rv-gateL"><span class="yr">2025 · Api Perapian yang Sama</span><h3>Api Perapian yang Sama</h3><img class="cem tegak" src="assets/undangya/istana-salju/cemara-salju.webp" alt="" loading="lazy"><div class="winrow" aria-hidden="true"><i style="opacity:0.79"></i><i style="opacity:0.79"></i><i style="opacity:0.79"></i></div><p>Keluarga Ridwan dan keluarga Sutrisno bertemu dalam silaturahmi yang direncanakan bersama — menyepakati hari, tempat, dan satu hal terpenting: kebahagiaan kedua anak mereka.</p></article>
+    <article class="rv rv-gateR"><span class="yr">2027 · Istana Berdua</span><h3>Istana Berdua</h3><img class="cem tegak" src="assets/undangya/istana-salju/cemara-salju.webp" alt="" loading="lazy"><div class="winrow" aria-hidden="true"><i style="opacity:1.01"></i><i style="opacity:1.01"></i><i style="opacity:1.01"></i></div><p>Sabtu, 12 Juni 2027 — babak yang kami tulis bersama Anda. Pintu istana terbuka; kami menunggu kehadiran dan doa restu Anda di Jakarta Selatan.</p></article>
   </div>
 </section>
-<div class="strip" aria-hidden="true"></div>
+<div class="icicle-div" aria-hidden="true"><span class="beam"></span><img class="gantung" src="assets/undangya/istana-salju/is-icicles.webp" alt="" loading="lazy"></div>
 <!-- ================= DRESSCODE + DENAH ================= -->
 <section id="info">
   <div class="snowfield" data-snow="6"></div>
@@ -428,10 +523,10 @@ footer p{background:rgba(7,20,40,.8);display:inline-block;padding:8px 14px;borde
       <a class="btn ghost sm rv rv-right" href="https://www.google.com/maps/search/?api=1&amp;query=The+Ritz-Carlton+Jakarta+Pacific+Place" target="_blank" rel="noopener">Rute Resepsi</a>
     </div>
   </div>
-  <img class="tegak" src="assets/undangya/istana-salju/cemara-salju.webp" alt="" width="66" style="position:absolute;bottom:6px;left:2px">
-  <img class="tegak" src="assets/undangya/istana-salju/bunga-es.webp" alt="" width="52" style="position:absolute;bottom:10px;right:6px;animation-delay:-3s">
+  <img data-deco class="tegak" src="assets/undangya/istana-salju/cemara-salju.webp" alt="" width="66" style="position:absolute;bottom:6px;left:2px">
+  <img data-deco class="tegak" src="assets/undangya/istana-salju/bunga-es.webp" alt="" width="52" style="position:absolute;bottom:10px;right:6px;animation-delay:-3s">
 </section>
-<div class="strip s2" aria-hidden="true"></div>
+<div class="icicle-div" aria-hidden="true"><span class="beam"></span><img class="gantung" src="assets/undangya/istana-salju/is-icicles.webp" alt="" loading="lazy" style="animation-delay:-3.2s"></div>
 <!-- ================= VIDEO TEASER ================= -->
 <section id="cuplikan">
   <div class="aurora" style="top:4%"></div>
@@ -461,7 +556,7 @@ footer p{background:rgba(7,20,40,.8);display:inline-block;padding:8px 14px;borde
     <button class="btn rv rv-zoom d2" type="button" id="liveBtn" style="margin-top:14px"><svg width="17" height="17"><use href="#i-video"/></svg> Tonton Siaran Langsung (Demo)</button>
   </div>
 </section>
-<div class="strip" aria-hidden="true"></div>
+<div class="icicle-div" aria-hidden="true"><span class="beam"></span><img class="gantung" src="assets/undangya/istana-salju/is-icicles.webp" alt="" loading="lazy"></div>
 <!-- ================= RSVP ================= -->
 <section id="rsvp">
   <div class="snowfield" data-snow="8"></div>
@@ -469,7 +564,8 @@ footer p{background:rgba(7,20,40,.8);display:inline-block;padding:8px 14px;borde
     <span class="kick rv rv-down">RSVP &amp; Ucapan</span>
     <h2 class="script rv rv-zoom d1" style="margin-top:12px">Konfirmasi &amp; Dinding Ucapan</h2>
   </div>
-  <div class="glass">
+  <div class="glass" style="position:relative">
+    <svg class="quill" viewBox="0 0 48 48" aria-hidden="true"><path d="M40 4C26 6 12 18 8 34l-2 8 8-2c16-4 28-18 30-32l-4-4z" fill="none" stroke="#EAF4FF" stroke-width="2.2" stroke-linejoin="round"/><path d="M10 36C18 26 28 16 38 8" fill="none" stroke="#E9C979" stroke-width="1.8"/></svg>
     <p class="note-demo rv rv-up">Mode demo — RSVP &amp; ucapan tersimpan hanya di perangkat ini (localStorage), tidak terkirim ke server.</p>
     <form id="rsvpForm" style="margin-top:14px">
       <div class="rv rv-left"><label for="rsvpNama">Nama</label><input type="text" id="rsvpNama" required maxlength="60" placeholder="Nama Anda" data-guest-fill></div>
@@ -481,7 +577,7 @@ footer p{background:rgba(7,20,40,.8);display:inline-block;padding:8px 14px;borde
     <div class="wall" id="rsvpWall" aria-live="polite"></div>
   </div>
 </section>
-<div class="strip s2" aria-hidden="true"></div>
+<div class="icicle-div" aria-hidden="true"><span class="beam"></span><img class="gantung" src="assets/undangya/istana-salju/is-icicles.webp" alt="" loading="lazy" style="animation-delay:-3.2s"></div>
 <!-- ================= BUKU TAMU + QR ================= -->
 <section id="bukutamu">
   <div class="snowfield" data-snow="6"></div>
@@ -503,7 +599,7 @@ footer p{background:rgba(7,20,40,.8);display:inline-block;padding:8px 14px;borde
     <div class="wall" id="ciWall" aria-live="polite"></div>
   </div>
 </section>
-<div class="strip" aria-hidden="true"></div>
+<div class="icicle-div" aria-hidden="true"><span class="beam"></span><img class="gantung" src="assets/undangya/istana-salju/is-icicles.webp" alt="" loading="lazy"></div>
 <!-- ================= AMPLOP + KADO + HASHTAG ================= -->
 <section id="amplop">
   <div class="aurora a3" style="top:2%"></div>
@@ -537,7 +633,7 @@ footer p{background:rgba(7,20,40,.8);display:inline-block;padding:8px 14px;borde
     <div class="guest-photos" id="guestPhotos"></div>
   </div>
 </section>
-<div class="strip s2" aria-hidden="true"></div>
+<div class="icicle-div" aria-hidden="true"><span class="beam"></span><img class="gantung" src="assets/undangya/istana-salju/is-icicles.webp" alt="" loading="lazy" style="animation-delay:-3.2s"></div>
 <!-- ================= TURUT + PENUTUP ================= -->
 <section id="turut">
   <div class="glass center">
@@ -559,8 +655,8 @@ footer p{background:rgba(7,20,40,.8);display:inline-block;padding:8px 14px;borde
     <p class="script rv rv-spin d4" style="font-size:2.3rem;color:var(--gold2)">Meyzsa &amp; Fahrezzi</p>
     <p class="small rv rv-up d5">beserta keluarga besar kedua mempelai</p>
   </div>
-  <img class="tegak" src="assets/undangya/istana-salju/fg-pinus.webp" alt="" width="70" style="position:absolute;bottom:4px;left:0">
-  <img class="tegak" src="assets/undangya/istana-salju/bunga-es.webp" alt="" width="58" style="position:absolute;bottom:8px;right:8px;animation-delay:-3s">
+  <img data-deco class="tegak" src="assets/undangya/istana-salju/fg-pinus.webp" alt="" width="70" style="position:absolute;bottom:4px;left:0">
+  <img data-deco class="tegak" src="assets/undangya/istana-salju/bunga-es.webp" alt="" width="58" style="position:absolute;bottom:8px;right:8px;animation-delay:-3s">
 </section>
 <footer>
   <p>UndangYa! — seluruh nama, tanggal, dan nomor pada halaman ini adalah data contoh tema “Istana Salju”.<br>Musik latar: “Petals on the Stone Floor”.</p>
@@ -607,10 +703,14 @@ var bgm=$("#bgm"), mBtn=$("#musicBtn"), playing=false;
 function setPlay(on){playing=on;mBtn.classList.toggle("playing",on);}
 mBtn.addEventListener("click",function(){ if(playing){bgm.pause();setPlay(false);} else {bgm.play().then(function(){setPlay(true)}).catch(function(){setPlay(false)});} });
 $("#openBtn").addEventListener("click",function(){
-  $("#cover").classList.add("gone"); document.body.classList.remove("locked");
+  var cv=$("#cover"); cv.classList.add("opening"); document.body.classList.add("opening");
+  setTimeout(function(){ cv.classList.add("gone"); document.body.classList.remove("locked"); document.body.classList.add("opened"); },1080);
   bgm.play().then(function(){setPlay(true)}).catch(function(){});
   window.scrollTo(0,0);
 });
+/* snow globe shake on view */
+var globe=$("#snowGlobe");
+if(globe){var gio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){globe.classList.remove("shake");void globe.offsetWidth;globe.classList.add("shake");}})},{threshold:.35}); gio.observe(globe);}
 /* toast */
 var toastT; function toast(msg){var t=$("#toast");t.textContent=msg;t.classList.add("show");clearTimeout(toastT);toastT=setTimeout(function(){t.classList.remove("show")},2600);}
 /* countdown */
